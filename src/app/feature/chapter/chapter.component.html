@@ -1,3 +1,8 @@
-<p>
-  chapter works!
-</p>
+<nav id="chapter-list">
+  <ul>
+    <li *ngFor="let chapter of chapterList"
+        (click)="changeChapter(chapter)">
+      {{chapter.title}}
+    </li>
+  </ul>
+</nav>

@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Video} from './model/Video';
+import {VideoService} from './service/video.service';
+import {ChapterService} from '../chapter/service/chapter.service';
+import {Chapter} from '../chapter/model/Chapter';
 
 @Component({
   selector: 'app-video',
@@ -7,9 +11,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  video: Video;
+  activeChapter: Chapter;
+  @ViewChild('videoER') private videoER: ElementRef;
+
+  constructor(private videoService: VideoService,
+              private chapterService: ChapterService) { }
 
   ngOnInit() {
+    this.videoService.getVideo().subscribe(
+      v => this.video = v
+    );
+    this.chapterService.getActiveChatper().subscribe(
+      ac => {
+        if (ac != null) {
+          this.videoER.nativeElement.currentTime = parseInt(ac.pos);
+        }
+      }
+    );
   }
 
 }

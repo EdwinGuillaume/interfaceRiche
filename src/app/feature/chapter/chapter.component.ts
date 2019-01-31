@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Chapter} from './model/Chapter';
+import {ChapterService} from './service/chapter.service';
 
 @Component({
   selector: 'app-chapter',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChapterComponent implements OnInit {
 
-  constructor() { }
+  chapterList: Chapter[];
+
+  constructor(private chapterService: ChapterService) { }
 
   ngOnInit() {
+    this.chapterService.getChapterList()
+      .subscribe(cl => {
+        this.chapterList = cl;
+      });
+  }
+
+  changeChapter(chapter: Chapter): void {
+    this.chapterService.setActiveChapter(chapter);
   }
 
 }
