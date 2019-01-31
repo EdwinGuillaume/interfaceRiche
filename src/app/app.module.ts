@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { VideoComponent } from './video/video.component';
-import { ChapterComponent } from './chapter/chapter.component';
+import { VideoComponent } from './feature/video/video.component';
+import { ChapterComponent } from './feature/chapter/chapter.component';
 
 @NgModule({
   declarations: [
