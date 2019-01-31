@@ -1,0 +1,18 @@
+
+#page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+  & > div {
+    height: 100%;
+  }
+
+  & > div:first-child {
+    width: 15%;
+  }
+
+  & > div:last-child {
+    flex: 1;
+  }
+}
