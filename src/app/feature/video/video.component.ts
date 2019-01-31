@@ -20,7 +20,11 @@ export class VideoComponent implements OnInit {
 
   ngOnInit() {
     this.videoService.getVideo().subscribe(
-      v => this.video = v
+      v => {
+        if (v != null) {
+          this.video = v;
+        }
+      }
     );
     this.chapterService.getActiveChatper().subscribe(
       ac => {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Chapter} from './model/Chapter';
 import {ChapterService} from './service/chapter.service';
+import {MatMenuTrigger} from '@angular/material';
 
 @Component({
   selector: 'app-chapter',
@@ -10,6 +11,7 @@ import {ChapterService} from './service/chapter.service';
 export class ChapterComponent implements OnInit {
 
   chapterList: Chapter[];
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
   constructor(private chapterService: ChapterService) { }
 
@@ -18,6 +20,7 @@ export class ChapterComponent implements OnInit {
       .subscribe(cl => {
         this.chapterList = cl;
       });
+    this.trigger.openMenu();
   }
 
   changeChapter(chapter: Chapter): void {

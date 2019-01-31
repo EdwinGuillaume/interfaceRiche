@@ -1,8 +1,9 @@
-<nav id="chapter-list">
-  <ul>
-    <li *ngFor="let chapter of chapterList"
-        (click)="changeChapter(chapter)">
-      {{chapter.title}}
-    </li>
-  </ul>
-</nav>
+<button mat-raised-button color="primary" [matMenuTriggerFor]="matMenu">
+  Chapter
+</button>
+<mat-menu #matMenu="matMenu">
+  <button mat-menu-item *ngFor="let chapter of chapterList"
+      (click)="changeChapter(chapter)">
+    {{chapter.title}}
+  </button>
+</mat-menu>
