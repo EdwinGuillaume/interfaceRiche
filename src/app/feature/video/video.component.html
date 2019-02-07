@@ -1,6 +1,6 @@
-<div id="video"*ngIf="video != null" >
+<div id="video" *ngIf="video != null" >
   <h2>{{video.title}}</h2>
-  <video #videoER width="640" height="480" controls>
+  <video #videoER width="100%" height="80%" controls>
     <source [attr.src]="video.file_url" type="video/mp4">
     Your browser does not support the video tag.
   </video>

@@ -1,5 +1,5 @@
 
 export class Chapter {
-  pos: string;
+  pos: number;
   title: string;
 }

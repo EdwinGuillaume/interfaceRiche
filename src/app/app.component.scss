@@ -1,25 +1,25 @@
 
-#page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-
-  & > div {
-    height: 100%;
-  }
-
-  & > div:first-child {
-    width: 15%;
-  }
-
-  & > div:last-child {
-    display: flex;
-    justify-content: space-around;
-    flex: 1;
-
-    app-video {
-      display: flex;
-      align-items: center;
-    }
-  }
-}
+//#page {
+//  width: 100vw;
+//  height: 100vh;
+//  display: flex;
+//
+//  & > div {
+//    height: 100%;
+//  }
+//
+//  & > div:first-child {
+//    width: 15%;
+//  }
+//
+//  & > div:last-child {
+//    display: flex;
+//    justify-content: space-around;
+//    flex: 1;
+//
+//    app-video {
+//      display: flex;
+//      align-items: center;
+//    }
+//  }
+//}

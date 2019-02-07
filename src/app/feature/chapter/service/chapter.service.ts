@@ -17,7 +17,14 @@ export class ChapterService {
       .then(c => {
         const tmp: any = c;
         if (tmp.hasOwnProperty('Chapters')) {
-          this.chapterList.next(tmp.Chapters);
+          let chpts : Chapter[] = Array();
+          tmp.Chapters.map(
+            ch => chpts.push(
+              { pos: Number(ch.pos),
+                title: ch.title
+              })
+          );
+          this.chapterList.next(chpts);
         }
       });
   }
@@ -26,7 +33,7 @@ export class ChapterService {
     return this.chapterList.asObservable();
   }
 
-  getActiveChatper(): Observable<Chapter> {
+  getActiveChapter(): Observable<Chapter> {
     return this.activeChapterSubject.asObservable();
   }
 

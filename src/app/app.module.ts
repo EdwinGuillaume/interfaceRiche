@@ -8,7 +8,7 @@ import { VideoComponent } from './feature/video/video.component';
 import { ChapterComponent } from './feature/chapter/chapter.component';
 import { HttpClientModule} from '@angular/common/http';
 import { MapComponent } from './feature/map/map.component';
-import {AgmCoreModule} from '@agm/core';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import {AgmCoreModule} from '@agm/core';
     HttpClientModule,
     MatMenuModule,
     BrowserAnimationsModule,
-    AgmCoreModule.forRoot()
+    LeafletModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

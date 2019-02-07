@@ -26,10 +26,10 @@ export class VideoComponent implements OnInit {
         }
       }
     );
-    this.chapterService.getActiveChatper().subscribe(
+    this.chapterService.getActiveChapter().subscribe(
       ac => {
         if (ac != null) {
-          this.videoER.nativeElement.currentTime = parseInt(ac.pos);
+          this.videoER.nativeElement.currentTime = ac.pos;
         }
       }
     );
