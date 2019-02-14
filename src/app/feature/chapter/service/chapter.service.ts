@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class ChapterService {
 
-  private chapterList: BehaviorSubject<Chapter[]> = new BehaviorSubject<Chapter[]>(null);
+  private chapterList: BehaviorSubject<Chapter[]> = new BehaviorSubject<Chapter[]>([]);
   private activeChapterSubject: BehaviorSubject<Chapter> = new BehaviorSubject<Chapter>(null);
 
   constructor(private http: HttpClient) {
